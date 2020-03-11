@@ -1,0 +1,20 @@
+
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<DialogPane fx:controller="com.RS.todolist.DialogueController"
+            xmlns:fx="http://javafx.com/fxml">
+    <content>
+        <GridPane vgap="10" hgap="10">
+            <Label text="Enter Title" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="titleText" GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="300"/>
+            <Label text="Enter Details" GridPane.rowIndex="1" GridPane.columnIndex="0" wrapText="true"/>
+            <TextArea fx:id="detailsText" GridPane.rowIndex="1" GridPane.columnIndex="1" maxWidth="300"/>
+            <Label text="Due Date:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+            <DatePicker fx:id="dateText" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        </GridPane>
+    </content>
+</DialogPane>

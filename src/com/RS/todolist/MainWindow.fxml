@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainWindow" stylesheets="../../../com/RS/todolist/style.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.RS.todolist.Controller">
+    <top>
+       <ToolBar>
+           <HBox>
+               <Button id="toolbar" onAction="#showNewItemBox">
+                   <graphic>
+                       <ImageView>
+                           <image>
+                             <Image url="@../../../resources/New24.gif" />
+                           </image>
+                       </ImageView>
+                   </graphic>
+                   <tooltip>
+                       <Tooltip text="Create a new Reminder" />
+                   </tooltip>
+               </Button>
+               <ToggleButton id="toolbar" fx:id="filterToggle" onAction="#handleFilter" prefHeight="25.0" prefWidth="156.0" text="Today's Reminders only">
+                   <tooltip>
+                       <Tooltip text="Press to show only today's reminders" />
+                   </tooltip>
+               </ToggleButton>
+               <Button id="toolbar" onAction="#handleExit" text="Exit">
+                   <tooltip>
+                       <Tooltip text="Exit the application" />
+                   </tooltip>
+               </Button>
+           </HBox>
+       </ToolBar>
+    </top>
+    <left>
+        <ListView fx:id="toDoItemListView" onKeyPressed="#handleKeyPress" />
+    </left>
+    <center>
+        <VBox style="-fx-background-color: white">
+            <TextArea fx:id="itemDetails" editable="false" wrapText="true" VBox.vgrow="ALWAYS">
+                <font>
+                    <Font name="Cambria bold" size="20" />
+                </font>
+            </TextArea>
+            <HBox>
+                <Label fx:id="dueText" text="Due: " visible="false">
+                    <font>
+                        <Font name="Cambria bold" size="20" />
+                    </font>
+                </Label>
+                <Label fx:id="dueDate">
+                    <font>
+                        <Font name="Cambria bold" size="20" />
+                    </font>
+                </Label>
+            </HBox>
+
+        </VBox>
+    </center>
+</BorderPane>
